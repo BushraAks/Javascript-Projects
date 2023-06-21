@@ -1,0 +1,118 @@
+@import "./reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+body {
+  background: linear-gradient(to left, #474b79, #6e3f3f);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100vh;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  z-index: 1;
+  backdrop-filter: blur(15px);
+}
+
+.card {
+  width: 400px;
+  height: 400px;
+  overflow-y: scroll;
+  padding: 7px 20px;
+  font-size: 13px;
+  border-radius: 30px;
+  padding: 20px 15px;
+}
+
+/* input field and button */
+.input-item {
+  display: flex;
+}
+
+input {
+  padding: 7px 20px;
+  margin: 20px 0;
+  border-radius: 25px;
+  width: 100%;
+  position: relative;
+  /* background-color: rgba(110, 63, 63, 0.3); */
+  background: linear-gradient(
+    to left,
+    rgba(71, 75, 121, 0.3),
+    rgba(110, 63, 63, 0.3)
+  );
+}
+
+button {
+  padding: 7px 40px;
+  border-radius: 25px;
+  position: absolute;
+  right: 15px;
+  top: 57px;
+  background-color: #6e3f3f;
+  font-size: inherit;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.todo-li {
+  padding: 7px 20px;
+  list-style: none;
+  font-size: 14px;
+  /* border: 1.5px solid #474b79; */
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.05em;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  font-family: "Quicksand", sans-serif;
+}
+
+h3.cross-out {
+  text-decoration: line-through;
+}
+
+li h3 {
+  cursor: pointer;
+}
+
+i {
+  color: #ea7070;
+  cursor: pointer;
+}
+
+.emojis-list {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-radius: 25px;
+  overflow-x: scroll;
+}
