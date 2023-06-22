@@ -3,6 +3,20 @@ import { emojis } from "./emoji.js";
 const ulElement = document.querySelector('.list-items'); // ul
 const addButton = document.querySelector('.add-button'); // button 
 const addInput = document.querySelector('.add-input'); // input
+const editIcon = document.querySelector('.fa-pen'); // edit
+const title = document.querySelector('.title'); // title
+
+
+// adding click listener for edit icon
+//not working currently
+
+// editIcon.addEventListener('click', ()=>{
+//     console.log("clicked");
+//     title.click();
+// })
+
+
+
 
 // adding click listener for add button
 addButton.addEventListener('click', () => {
@@ -12,6 +26,7 @@ addButton.addEventListener('click', () => {
     } else {
         const li = document.createElement('li');
         li.classList.add('todo-li');
+        li.style = 'overflow-wrap: anywhere';
         li.innerHTML =
             `
             <h3 id="list-item">${item}</h3> 
@@ -83,5 +98,10 @@ const emojiElement = document.querySelectorAll('.emoji-element');
 emojiElement.forEach((emoji) => {
     emoji.addEventListener('click', (event) => {
         addInput.value += event.target.textContent;
+
+        // moving cursor to the end of input after inserting emoji
+        const end = addInput.value.length;
+        addInput.setSelectionRange(end, end);
+        addInput.focus();
     })
 })

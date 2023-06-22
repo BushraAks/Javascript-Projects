@@ -30,30 +30,51 @@ body {
   padding: 20px 15px;
 }
 
-/* input field and button */
-.input-item {
+.title-element {
+  position: relative;
   display: flex;
 }
 
-input {
-  padding: 7px 20px;
-  margin: 20px 0;
-  border-radius: 25px;
-  width: 100%;
-  position: relative;
+.fa-pen {
+  position: absolute;
+  right: -20px;
+  bottom: 25px;
+}
+
+.title + .fa-pen {
+  display: none;
+}
+
+.title:hover + .fa-pen {
+  display: block;
+}
+
+/* input field and button */
+.input-item {
+  display: flex;
   background: linear-gradient(
     to left,
     rgba(71, 75, 121, 0.3),
     rgba(110, 63, 63, 0.3)
   );
+  border-radius: 25px;
+  margin: 20px 0;
+  position: relative;
+  position: sticky;
+}
+
+input {
+  padding: 7px 20px;
+  width: 280px;
+  overflow-x: auto;
 }
 
 button {
+  position: absolute;
   padding: 7px 40px;
   border-radius: 25px;
-  position: absolute;
-  right: 15px;
-  top: 57px;
+  right: 0px;
+  top: 0px;
   background-color: #6e3f3f;
   font-size: inherit;
 }
