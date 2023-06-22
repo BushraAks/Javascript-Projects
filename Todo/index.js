@@ -224,7 +224,6 @@ addButton.addEventListener('click', (event)=>{
     if (item == ''){}
     else {
         const li = document.createElement('li');
-        li.classList.add('glassmorphism');
         li.classList.add('todo-li');
         li.innerHTML = 
         `
@@ -240,7 +239,7 @@ addButton.addEventListener('click', (event)=>{
 
         
 
-        addInput.value = ''; // initializing the input value to nothing
+        addInput.value = ''; // initializing the input value back to nothing
     }
 } )
 
@@ -254,7 +253,7 @@ addInput.addEventListener('keypress', (event)=>{
 })
 
 
-// adding listeners for list items for crossing out
+// adding listeners for list items for crossing out  LIST ITEMS
 
 function crossOut(){
     const arrayElements = document.querySelectorAll('#list-item'); // [h3, h3, h3];
@@ -272,7 +271,7 @@ function crossOut(){
 }
 
 
-// adding listener for trash items
+// adding listener for trash items   TRASH ITEMS
 
 function addTrash(){
     const trashes =  document.querySelectorAll('.fa-trash')
@@ -284,7 +283,7 @@ function addTrash(){
     })
 }
 
-// emoji selector array appending
+// emoji selector array appending  EMOJI ITEMS
 
 const emojiUlElement = document.querySelector('.emojis-list');
 
@@ -299,11 +298,17 @@ emojis.forEach((emoji)=>{
      emojiUlElement.appendChild(emojisLi);
 })
 
-// listener for emojis
+// listener for emojis   EMOJI ITEMS
 
 const emojiElement = document.querySelectorAll('.emoji-element');
 emojiElement.forEach((emoji)=>{
     emoji.addEventListener('click', (event)=>{
         addInput.value += event.target.textContent;
+
+        // moving cursor to the end of input after inserting the emoji
+        const end = addInput.value.length;
+        addButton.focus();
+        addInput.setSelectionRange(end, end);
+        addButton.focus();
     })
 })
