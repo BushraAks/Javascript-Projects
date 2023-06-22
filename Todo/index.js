@@ -234,11 +234,13 @@ addButton.addEventListener('click', (event)=>{
 
         crossOut();
         addTrash();
-        ulElement.appendChild(li); 
+        ulElement.insertBefore(li, ulElement.children[0]); 
         crossOut();
         addTrash();
 
-        addInput.value = '';
+        
+
+        addInput.value = ''; // initializing the input value to nothing
     }
 } )
 
