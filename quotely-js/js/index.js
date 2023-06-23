@@ -1,35 +1,28 @@
 import { imgs, writers, contents } from "./quote-details.js";
+import Quote from "./quote.js";
 
+const addQuoteButton = document.querySelector('.add-quote'),
+    addQuoteForm = document.querySelector('.add-quote-form'),
+    hideTabForm = document.querySelector('.fa-x'),
+    submitBtn = document.querySelector('#submit-btn'),
+    cards = document.querySelector('.cards');
 
-class Quote {
-    constructor(img, writer, content){
-        this.img = img;
-        this.writer = writer;
-        this.content = content;
-    }
-}
+//! Array to store all quotes
+const quotes = [];
 
-// array to store all quote objects
-let quotes = [];
-
-// adding 9 quotes to the array from the arrays in quote-details
-for(let i=0; i<9; i++){
+//! Adding quotes to the array from the arrays in quote-details
+for (let i = 0; i < contents.length; i++) {
     quotes[i] = new Quote(imgs[i], writers[i], contents[i])
 }
 
-
-// function for adding quote to card
-
-const cards = document.querySelector('.cards');
-
-function appendCards(img, content, writer){
+//! Adding quote to card
+const appendCards = (img, content, writer) => {
     const card = document.createElement('div');
 
     card.classList.add('card');
     card.classList.add('glassmorphism');
 
-    console.log(img, writer, content);
-    card.innerHTML = 
+    card.innerHTML =
         `
         <img src="${img}" alt="Image">
         <div>
@@ -40,36 +33,22 @@ function appendCards(img, content, writer){
     cards.appendChild(card);
 }
 
-quotes.forEach((quote)=>{
-    appendCards(quote.img, quote.content, quote.writer);
-})
+//? A bit shorter (one linear)
+quotes.forEach(quote => appendCards(quote.img, quote.content, quote.writer))
 
-
-const addQuoteButton = document.querySelector('.add-quote');
-const addQuoteForm = document.querySelector('.add-quote-form');
-
-//  Adding listener for add quote button
-
-
-
-addQuoteButton.addEventListener('click', ()=>{
-    console.log('clicked')
+//! Open quote Form
+addQuoteButton.addEventListener('click', () => {
     addQuoteForm.style.visibility = 'visible';
 })
 
-
-// listener for closing add quote form
-const faX = document.querySelector('.fa-x');
-faX.addEventListener('click', ()=>{
+//!Close quote Form
+hideTabForm.addEventListener('click', () => {
     addQuoteForm.style.visibility = 'hidden'
 })
 
 
-// adding listener for add/ sumbit button
-
-const submitBtn = document.querySelector('#submit-btn');
-
-submitBtn.addEventListener('click', ()=>{
+//! adding listener for add button
+submitBtn.addEventListener('click', () => {
     console.log('submit');
     const imgFile = document.querySelector('#img-file').value;
     console.log(imgFile);
@@ -79,6 +58,26 @@ submitBtn.addEventListener('click', ()=>{
 
     appendCards(imgFile, content, writer)
     addQuoteForm.style.visibility = 'hidden';
-})
+});
 
+
+/*
+storing images just by using JS in client-side it's not possible.
+you have to use a server-side technology like: nodeJS, django or php.
+
+-----------------------------
+
+butt there's still solution: u can store it inside localStorage! What do you think?
+let's try why not? even for me it's new, dealing with images and storing on client-side;
+
+-----------------------------
+
+the only solution without backend and localStorage is: u need to download images and store them
+in 'images' folder, then instead choosing file you need to enter the path of image that's all. 
+
+For example: 
+    image: "images/img20.jpg"
+    wirter: "Someone"
+    Quote: "BlaBla"
+*/
 
