@@ -85,3 +85,26 @@ function validate() {
     }
 
 }
+
+
+
+/*
+storing images just by using JS in client-side it's not possible.
+you have to use a server-side technology like: nodeJS, django or php.
+
+-----------------------------
+
+butt there's still solution: u can store it inside localStorage! What do you think?
+let's try why not? even for me it's new, dealing with images and storing on client-side;
+
+-----------------------------
+
+the only solution without backend and localStorage is: u need to download images and store them
+in 'images' folder, then instead choosing file you need to enter the path of image that's all. 
+
+For example: 
+    image: "images/img20.jpg"
+    wirter: "Someone"
+    Quote: "BlaBla"
+*/
+

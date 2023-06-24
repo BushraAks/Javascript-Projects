@@ -16,7 +16,7 @@ for (let i = 0; i < contents.length; i++) {
 }
 
 //! Adding quote to card
-const appendCards = (img, content, writer) => {
+const appendCards = (img, content, writer, order) => {
     const card = document.createElement('div');
 
     card.classList.add('card');
@@ -30,11 +30,13 @@ const appendCards = (img, content, writer) => {
             <h5 class="writer">${writer} ~</h5>
         </div>
         `
-    cards.appendChild(card);
+    if (order == 'asc') {cards.appendChild(card);}
+    else if (order == 'desc') {cards.insertAdjacentElement('afterbegin', card);}
+    
 }
 
 //? A bit shorter (one linear)
-quotes.forEach(quote => appendCards(quote.img, quote.content, quote.writer))
+quotes.forEach(quote => appendCards(quote.img, quote.content, quote.writer, 'asc'))
 
 //! Open quote Form
 addQuoteButton.addEventListener('click', () => {
@@ -47,37 +49,30 @@ hideTabForm.addEventListener('click', () => {
 })
 
 
+// add to local storage
+
+function addImgToLocalStorage(){
+
+}
+
+
 //! adding listener for add button
+
 submitBtn.addEventListener('click', () => {
-    console.log('submit');
-    const imgFile = document.querySelector('#img-file').value;
-    console.log(imgFile);
-    const writer = document.querySelector('#writer').value;
-    const content = document.querySelector('#content').value;
-    quotes.push(new Quote(imgFile, writer, content));
+    const imgFile = document.querySelector('#img-file');
+    const writer = document.querySelector('#writer');
+    const content = document.querySelector('#content');
 
-    appendCards(imgFile, content, writer)
+    const reader = new FileReader()
+    reader.addEventListener('load', ()=>{
+        localStorage.setItem('uploaded-image', reader.result);
+    })
+    reader.readAsDataURL(imgFile.files[0])
+    const recentImageDataUrl = localStorage.getItem('uploaded-image')
+
+    quotes.push(new Quote(recentImageDataUrl, writer.value, content.value)); 
+    appendCards(recentImageDataUrl, content.value, writer.value, 'desc');
     addQuoteForm.style.visibility = 'hidden';
+    
 });
-
-
-/*
-storing images just by using JS in client-side it's not possible.
-you have to use a server-side technology like: nodeJS, django or php.
-
------------------------------
-
-butt there's still solution: u can store it inside localStorage! What do you think?
-let's try why not? even for me it's new, dealing with images and storing on client-side;
-
------------------------------
-
-the only solution without backend and localStorage is: u need to download images and store them
-in 'images' folder, then instead choosing file you need to enter the path of image that's all. 
-
-For example: 
-    image: "images/img20.jpg"
-    wirter: "Someone"
-    Quote: "BlaBla"
-*/
 
