@@ -4,7 +4,6 @@ const studentForm = document.querySelector('#student-form'),
       nameInput = studentForm['name'],
       ageInput = studentForm['age'],
       rollInput = studentForm['roll'],
-      addButton = document.querySelector('#add-btn'),
       studentDetails = document.querySelector('.student-details'),
       studentsObjects = JSON.parse(localStorage.getItem('students')) || [];
 
@@ -35,15 +34,15 @@ studentForm.addEventListener('submit', (event) => {
 // listener for trash icons
 const addTrash = () => {
     const trashes = document.querySelectorAll('.fa-trash');
-    trashes.forEach((trash) => {
+    trashes.forEach((trash, inx) => {
         trash.addEventListener('click', (event) => {
+            console.log(inx + 1);
             const target = event.target;
-            console.log(target);
             target.parentElement.remove();
+            studentsObjects.splice(inx, 1);
+            localStorage.setItem('students', JSON.stringify(studentsObjects));
         })
     })
-
-    // I need to add a feature for deleting the item from quotes array after deleting
 }
 
 
