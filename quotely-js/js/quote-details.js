@@ -14,12 +14,12 @@ export const imgs = [
 ];
 
 export const writers = [
-    'Khaled husseini',
-    'William Shakespeare',
-    'Robert Frost',
     'Mahmoud Darwish',
     'Rumi',
     'Fyodor Dostoevsky',
+    'Khaled husseini',
+    'William Shakespeare',
+    'Robert Frost',
     'Mark Twain',
     'Dave Matthews',
     'Soren Kierkegaard',
@@ -28,12 +28,12 @@ export const writers = [
 ];
 
 export const contents = [
-    'A boy who won"t stand up for himself becomes a man who can"t stand up to anything',
-    'To be, or not to be: that is the question',
-    'Good fences make good neighbours',
     'All roads lead to you, even those I took to forget you',
     'If I love myself, I love you. If I love you, I love myself',
     'Life is in ourselves and not in the external',
+    'A boy who won"t stand up for himself becomes a man who can"t stand up to anything',
+    'To be, or not to be: that is the question',
+    'Good fences make good neighbours',
     'You can’t depend on your eyes when your imagination is out of focus',
     'Could I have been anyone other than me?',
     'Life is not a problem to be solved, but a reality to be experienced',

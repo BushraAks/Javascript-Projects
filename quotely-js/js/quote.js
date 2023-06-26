@@ -1,4 +1,3 @@
-// it's better to keep this kinda classes separately.
 class Quote {
     constructor(img, writer, content) {
         this.img = img;
