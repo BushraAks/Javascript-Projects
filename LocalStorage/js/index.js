@@ -1,17 +1,17 @@
 import Student from './student.js';
 
-const nameInput = document.querySelector('#name-input'),
-      ageInput = document.querySelector('#age-input'),
-      rollInput = document.querySelector('#roll-input'),
+const studentForm = document.querySelector('#student-form'),
+      nameInput = studentForm['name'],
+      ageInput = studentForm['age'],
+      rollInput = studentForm['roll'],
       addButton = document.querySelector('#add-btn'),
-      studentDetails = document.querySelector('.student-details'),
-      form = document.querySelector('form');
+      studentDetails = document.querySelector('.student-details');
 
-form.addEventListener('submit', (event) => event.preventDefault());
+studentForm.addEventListener('submit', (event) => event.preventDefault());
 
 
 // for appending the stuents details section
-const appendStudentDetails = function(name, age, roll) {
+const appendStudentDetails = (name, age, roll) => {
     const studentElem = document.createElement('div');
     studentElem.classList.add('student');
 
@@ -22,7 +22,6 @@ const appendStudentDetails = function(name, age, roll) {
         <div class="roll"><span class="info-title">Roll: </span> ${roll} </div>
         <i class="fa-solid fa-trash"></i>
         `
-    addTrash();
     studentDetails.appendChild(studentElem);
     addTrash();
 }
@@ -36,7 +35,7 @@ addButton.addEventListener('click', () => {
 
 
 // listener for trash icons
-function addTrash() {
+const addTrash = () => {
     const trashes = document.querySelectorAll('.fa-trash');
     trashes.forEach((trash) => {
         trash.addEventListener('click', (event) => {
