@@ -1,0 +1,15 @@
+Students = JSON.parse(localStorage.getElement('students')) || []
+
+functions:
+ - addStudent(name, age, roll) // pushes student object to the students array and returns the object
+
+ - createStudentElement({name, age, roll}) => creates student div and appends the innerhtml stuff 
+    mine = appendStudentDetails
+
+ - after this, you will execute the function createStudentElement forEach student, so :-
+    Students.forEach(createStudentElement);
+
+ - onSubmit of the form, we create a new student object by assigning
+    const newStudent = addStudent(// parameters are values taken from input);
+    then call the function createStudentElement(newStudent);
+    then make inputs empty

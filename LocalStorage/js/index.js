@@ -5,13 +5,50 @@ const studentForm = document.querySelector('#student-form'),
       ageInput = studentForm['age'],
       rollInput = studentForm['roll'],
       addButton = document.querySelector('#add-btn'),
-      studentDetails = document.querySelector('.student-details');
+      studentDetails = document.querySelector('.student-details'),
+      studentsObjects = JSON.parse(localStorage.getItem('students')) || [];
 
-studentForm.addEventListener('submit', (event) => event.preventDefault());
+
+const addStudent = (name, age, roll) => {
+    studentsObjects.push(new Student(name, age, roll));
+
+    localStorage.setItem('students', JSON.stringify(studentsObjects));
+
+    return {name, age, roll};
+}
+
+studentForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const newStudent = addStudent(
+        nameInput.value,
+        ageInput.value,
+        rollInput.value);
+    
+    appendStudentDetails(newStudent);
+
+    nameInput.value = '';
+    ageInput.value = ''
+    rollInput.value = ''
+});
+
+
+// listener for trash icons
+const addTrash = () => {
+    const trashes = document.querySelectorAll('.fa-trash');
+    trashes.forEach((trash) => {
+        trash.addEventListener('click', (event) => {
+            const target = event.target;
+            console.log(target);
+            target.parentElement.remove();
+        })
+    })
+
+    // I need to add a feature for deleting the item from quotes array after deleting
+}
 
 
 // for appending the stuents details section
-const appendStudentDetails = (name, age, roll) => {
+const appendStudentDetails = ({name, age, roll}) => {
     const studentElem = document.createElement('div');
     studentElem.classList.add('student');
 
@@ -27,20 +64,7 @@ const appendStudentDetails = (name, age, roll) => {
 }
 
 
-// appending with data from input
-addButton.addEventListener('click', () => {
-    console.log('clicked');
-    appendStudentDetails(nameInput.value, ageInput.value, rollInput.value);
-})
+// creating html element for each student
+studentsObjects.forEach(appendStudentDetails);
 
 
-// listener for trash icons
-const addTrash = () => {
-    const trashes = document.querySelectorAll('.fa-trash');
-    trashes.forEach((trash) => {
-        trash.addEventListener('click', (event) => {
-            const target = event.target;
-            target.parentElement.remove();
-        })
-    })
-}
