@@ -21,7 +21,7 @@ studentForm.addEventListener('submit', (event) => {
     const newStudent = addStudent(
         nameInput.value,
         ageInput.value,
-        rollInput.value);
+        rollInput.value);   
     
     appendStudentDetails(newStudent);
 

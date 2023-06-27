@@ -1,8 +1,8 @@
 class Quote {
-    constructor(img, writer, content) {
+    constructor(img, content, writer) {
         this.img = img;
-        this.writer = writer;
         this.content = content;
+        this.writer = writer;
     }
 }
 

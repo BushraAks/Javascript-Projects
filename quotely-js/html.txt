@@ -107,4 +107,3 @@ For example:
     wirter: "Someone"
     Quote: "BlaBla"
 */
-
