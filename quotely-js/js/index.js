@@ -1,22 +1,21 @@
 import { imgs, writers, contents } from "./quote-details.js";
+import { setMode, show as showForm, hide as hideForm } from './utils.js';
 import Quote from "./quote.js";
 
-const 
-    addQuoteButton = document.querySelector('.add-quote'),
-    quoteForm = document.querySelector('.add-quote-form'),
-    hideTabForm = document.querySelector('.fa-x'),
-    submitBtn = document.querySelector('#submit-btn'),
-    cards = document.querySelector('.cards'),
-    body = document.querySelector('body'),
-    modes = document.querySelector('.modes'),
-    imgFile = document.querySelector('#img'),  // image input
-    content = document.querySelector('#content'),  // content input 
-    writer = document.querySelector('#writer'); // writer input
 
+const addQuoteButton = document.querySelector('.add-quote'),
+    quoteForm = document.querySelector('.add-quote-form'),
+    hideTabBtn = document.querySelector('.fa-x'),
+    submitForm = document.querySelector('.add-quote-form > form'),
+    cards = document.querySelector('.cards'),
+    modes = document.querySelector('.modes'),
+    imgFile = document.querySelector('#img'),
+    content = document.querySelector('#content'),
+    writer = document.querySelector('#writer');
 
 
 //! Adding quote to card and appending cards to website
-const appendCards = ({img, content, writer}) => {
+const appendCards = ({ img, content, writer }) => {
     const card = document.createElement('div');
 
     card.classList.add('card');
@@ -30,96 +29,66 @@ const appendCards = ({img, content, writer}) => {
             <h5 class="writer">${writer} ~</h5>
         </div>
         `
-    cards.insertAdjacentElement('afterbegin', card); 
+    cards.insertAdjacentElement('afterbegin', card);
 }
 
 
-//-------- Storing and appending all default quotes to the webpage
-
+//! Storing and appending all default quotes to the webpage
 const defaultQuotes = [] // default quotes array
 for (let i = 0; i < contents.length; i++) {
     defaultQuotes[i] = new Quote(imgs[i], writers[i], contents[i])
 }
 defaultQuotes.forEach(appendCards);
 
-//-------- End of default quotes
-
 
 //! Array to store all quotes
 const quotes = JSON.parse(localStorage.getItem('quotes')) || [];
 
+//! displaying cards from localStorage, in case if we have;
+quotes.forEach(appendCards);
 
-//! Creating new quotes and adding to array
+//! Creating new quotes and adding to localStorage then creating new Card by calling appendCards();
 const addQuote = (img, content, writer) => {
-    const newQuote = new Quote(img, content, writer);
-    quotes.push(newQuote);
-    localStorage.setItem('quotes', JSON.stringify(quotes));
+    //? first need to convert image to base64 then store it in localStorage;
+    const reader = new FileReader();
 
-    return {img, content, writer};
+    reader.addEventListener('load', () => {
+        const newQuote = new Quote(reader.result, content, writer);
+        quotes.push(newQuote);
+        localStorage.setItem('quotes', JSON.stringify(quotes));
+
+        appendCards(newQuote);
+    }, false);
+
+    reader.readAsDataURL(img);
 }
 
-// displaying cards
-quotes.forEach(appendCards)
+//! Add from input to localStorage;
+submitForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
+    addQuote(imgFile.files[0], content.value, writer.value);
 
-//! Open quote Form
-addQuoteButton.addEventListener('click', () => {
-    quoteForm.style.visibility = 'visible';
-})
-
-
-//!Close quote Form
-hideTabForm.addEventListener('click', () => {
-    quoteForm.style.visibility = 'hidden'
-})
-
-
-
-//! adding listener for add button
-submitBtn.addEventListener('click', () => {
-    // this is an incorect way of storing images
-    const file = imgFile.files[0];
-    const imgName = file.name;
-
-    const newQuote = addQuote(
-        imgName,
-        content.value, 
-        writer.value);
-
-    appendCards(newQuote);
-
-    imgFile.value = '';
-    content.value = '';
-    writer.value = '';
-
-    quoteForm.style.visibility = 'hidden';
-
+    submitForm.reset(); // this function will clear all input fields (better than blabla.value = '' for each input)
+    hideForm(quoteForm, 'hidden');
 });
 
 
-//! when submiting form
-quoteForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-})
-
-
-
+//? dont forget about DRY
 modes.addEventListener('click', (event) => {
     const target = event.target;
-    if (target.classList[0] == 'light-mode'){
-        body.classList.remove('dark-mode');
-        body.classList.remove('night-mode');
-        body.classList.add('light-mode');
+    if (target.classList.contains('light-mode')) {
+        setMode('light-mode')
+    } else if (target.classList.contains('night-mode')) {
+        setMode('night-mode')
+    } else if (target.classList.contains('dark-mode')) {
+        setMode('dark-mode')
     }
-    else if (target.classList[0] == 'night-mode'){
-        body.classList.remove('light-mode');
-        body.classList.remove('dark-mode');
-        body.classList.add('night-mode');
-    }
-    else if (target.classList[0] == 'dark-mode'){
-        body.classList.remove('night-mode');
-        body.classList.remove('light-mode');
-        body.classList.add('dark-mode');
-    }
-})
+});
+
+//! Open quote Form
+addQuoteButton.addEventListener('click', () => showForm(quoteForm, 'visible'))
+
+//! Close quote Form
+hideTabBtn.addEventListener('click', () => hideForm(quoteForm, 'hidden'))
 
