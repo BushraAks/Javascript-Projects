@@ -16,20 +16,47 @@ const addQuoteButton = document.querySelector('.add-quote'),
 
 
 //! Adding quote to card and appending cards to website
+
+// const appendCards = ({ img, content, writer }) => {
+//     const card = document.createElement('div');
+
+//     card.classList.add('card');
+//     card.classList.add('glassmorphism');
+
+//     card.innerHTML =
+//         `
+//         <img src="${img}" alt="Image">
+//         <div>
+//             <p class="content">"${content}"</p>
+//             <h5 class="writer" id="writer-txt">${writer} ~</h5>
+//         </div>
+//         `
+//     cards.insertAdjacentElement('afterbegin', card);
+// }
+
 const appendCards = ({ img, content, writer }) => {
     const card = document.createElement('div');
 
     card.classList.add('card');
     card.classList.add('glassmorphism');
 
-    card.innerHTML =
-        `
-        <img src="${img}" alt="Image">
-        <div>
-            <p class="content">"${content}"</p>
-            <h5 class="writer" id="writer-txt">${writer} ~</h5>
-        </div>
-        `
+    const imgEl = document.createElement('img'),
+          divEl = document.createElement('div'),
+          contentEl = document.createElement('p'),
+          writerEl = document.createElement('h5');
+
+    contentEl.classList.add('content')
+    writerEl.classList.add('writer');
+    writerEl.id = 'writer-txt';
+
+    imgEl.src = img;
+    imgEl.alt = "Image";
+    contentEl.innerText = `"${content}"`;
+    writerEl.innerText = `${writer} ~`;
+
+    divEl.append(contentEl, writerEl);
+    card.append(imgEl, divEl);
+
     cards.insertAdjacentElement('afterbegin', card);
 }
 
