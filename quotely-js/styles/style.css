@@ -60,8 +60,6 @@ body {
 
 .dark-mode {
   background: linear-gradient(to left, #000000, #434343, #000000);
-  /* try this one u'll like it. it's better i think having white color for texts when bg is dark; */
-  /* color: #fff; */
 }
 
 .cards {
@@ -106,6 +104,11 @@ body {
   font-size: 14px;
   margin: 15px 0;
   color: rgba(0, 0, 0, 0.7);
+}
+.writer-dark-mode {
+  font-size: 14px;
+  margin: 15px 0;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .add-quote-form {

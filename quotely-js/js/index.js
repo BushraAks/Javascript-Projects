@@ -13,6 +13,8 @@ const addQuoteButton = document.querySelector('.add-quote'),
     content = document.querySelector('#content'),
     writer = document.querySelector('#writer');
 
+export const writerTxt = document.querySelector('#writer-txt');
+
 
 //! Adding quote to card and appending cards to website
 const appendCards = ({ img, content, writer }) => {
@@ -26,7 +28,7 @@ const appendCards = ({ img, content, writer }) => {
         <img src="${img}" alt="Image">
         <div>
             <p class="content">"${content}"</p>
-            <h5 class="writer">${writer} ~</h5>
+            <h5 class="writer" id="writer-txt">${writer} ~</h5>
         </div>
         `
     cards.insertAdjacentElement('afterbegin', card);
@@ -34,9 +36,9 @@ const appendCards = ({ img, content, writer }) => {
 
 
 //! Storing and appending all default quotes to the webpage
-const defaultQuotes = [] // default quotes array
+const defaultQuotes = [] 
 for (let i = 0; i < contents.length; i++) {
-    defaultQuotes[i] = new Quote(imgs[i], writers[i], contents[i])
+    defaultQuotes[i] = new Quote(imgs[i], contents[i], writers[i])
 }
 defaultQuotes.forEach(appendCards);
 
@@ -69,8 +71,8 @@ submitForm.addEventListener('submit', (event) => {
 
     addQuote(imgFile.files[0], content.value, writer.value);
 
-    submitForm.reset(); // this function will clear all input fields (better than blabla.value = '' for each input)
-    hideForm(quoteForm, 'hidden');
+    submitForm.reset(); // this function will clear all input fields 
+    hideForm(quoteForm);
 });
 
 
@@ -78,17 +80,17 @@ submitForm.addEventListener('submit', (event) => {
 modes.addEventListener('click', (event) => {
     const target = event.target;
     if (target.classList.contains('light-mode')) {
-        setMode('light-mode')
+        setMode('light-mode');
     } else if (target.classList.contains('night-mode')) {
-        setMode('night-mode')
+        setMode('night-mode');
     } else if (target.classList.contains('dark-mode')) {
-        setMode('dark-mode')
+        setMode('dark-mode');
     }
 });
 
 //! Open quote Form
-addQuoteButton.addEventListener('click', () => showForm(quoteForm, 'visible'))
+addQuoteButton.addEventListener('click', () => showForm(quoteForm))
 
 //! Close quote Form
-hideTabBtn.addEventListener('click', () => hideForm(quoteForm, 'hidden'))
+hideTabBtn.addEventListener('click', () => hideForm(quoteForm))
 
