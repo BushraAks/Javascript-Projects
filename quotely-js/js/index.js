@@ -13,7 +13,6 @@ const addQuoteButton = document.querySelector('.add-quote'),
     content = document.querySelector('#content'),
     writer = document.querySelector('#writer');
 
-export const writerTxt = document.querySelector('#writer-txt');
 
 
 //! Adding quote to card and appending cards to website
@@ -76,6 +75,9 @@ submitForm.addEventListener('submit', (event) => {
 });
 
 
+const writersTxt = document.querySelectorAll('#writer-txt');
+
+
 //? dont forget about DRY
 modes.addEventListener('click', (event) => {
     const target = event.target;
@@ -85,6 +87,10 @@ modes.addEventListener('click', (event) => {
         setMode('night-mode');
     } else if (target.classList.contains('dark-mode')) {
         setMode('dark-mode');
+        writersTxt.forEach((text) => {
+            text.classList.remove('writer');
+            text.classList.add('writer-dark-mode');
+        })
     }
 });
 

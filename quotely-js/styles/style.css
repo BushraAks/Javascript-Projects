@@ -60,6 +60,7 @@ body {
 
 .dark-mode {
   background: linear-gradient(to left, #000000, #434343, #000000);
+  color: #fff;
 }
 
 .cards {
@@ -79,6 +80,7 @@ body {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
   border: 1.5px solid rgba(255, 255, 255, 0.1);
   transition: 0.3s;
+  color: #000 !important;
 }
 
 .add-quote:hover {
