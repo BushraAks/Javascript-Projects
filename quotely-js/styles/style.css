@@ -51,7 +51,7 @@ body {
   cursor: pointer;
   transition: 0.2s;
   transition: ease;
-  border: 1.5px solid rgba(0, 0, 0, 0.3);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
 }
 
@@ -64,14 +64,8 @@ body {
 }
 
 .dark-mode {
-  background: linear-gradient(to left, #000000, #434343, #000000);
+  background: linear-gradient(to left, #000000, #2e2e2e, #000000);
   color: #dadada;
-}
-
-.user {
-  margin-top: 20px;
-  font-size: 15px;
-  color: #7e7e7e;
 }
 
 .cards {
