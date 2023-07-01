@@ -66,11 +66,12 @@ const addQuote = (img, content, writer) => {
 
         appendCards(newQuote);
     }, false);
+    addMenuHover();
 
     reader.readAsDataURL(img);
 }
 
-const menuHover = () => {
+const addMenuHover = () => {
     const menus = document.querySelectorAll('#menu-icon');
     const dropdowns = document.querySelectorAll('.dropdown');
 
@@ -95,7 +96,7 @@ submitForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
     addQuote(imgFile.files[0], content.value, writer.value);
-    menuHover();
+    addMenuHover();
 
     submitForm.reset(); // this function will clear all input fields 
     hide(quoteForm);
@@ -115,13 +116,12 @@ modes.addEventListener('click', (event) => {
     }
 });
 
-//! Open quote Form
+//! Open quote Form 
 addQuoteButton.addEventListener('click', () => show(quoteForm))
 
 //! Close quote Form
 hideTabBtn.addEventListener('click', () => hide(quoteForm))
 
-menuHover();
-
 export const lis = document.querySelectorAll('li');
 
+addMenuHover();
