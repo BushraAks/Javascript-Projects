@@ -8,7 +8,7 @@ const addQuoteButton = document.querySelector('.add-quote'),
     hideTabBtn = document.querySelector('.fa-x'),
     submitForm = document.querySelector('.add-quote-form > form'),
     cards = document.querySelector('.cards'),
-    modes = document.querySelector('.modes'),
+    modes = document.querySelectorAll('.modes'),
     imgFile = document.querySelector('#img'),
     content = document.querySelector('#content'),
     writer = document.querySelector('#writer');
@@ -105,16 +105,13 @@ submitForm.addEventListener('submit', (event) => {
 export const writersTxt = document.querySelectorAll('#writer-txt');
 
 
-modes.addEventListener('click', (event) => {
-    const target = event.target;
-    if (target.classList.contains('light-mode')) {
-        setMode('light-mode');
-    } else if (target.classList.contains('night-mode')) {
-        setMode('night-mode');
-    } else if (target.classList.contains('dark-mode')) {
-        setMode('dark-mode');
-    }
-});
+modes.forEach((modesGroup) => {
+    modesGroup.addEventListener('click', (event) => {
+        const target = event.target;
+        setMode(target.classList[0])
+    });
+})
+
 
 //! Open quote Form 
 addQuoteButton.addEventListener('click', () => show(quoteForm))

@@ -1,4 +1,5 @@
 @import "./reset.css";
+@import "./modes.css";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 body {
@@ -53,19 +54,7 @@ body {
   transition: ease;
   border: 1.5px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
-}
-
-.light-mode {
-  background: linear-gradient(to left, #ada996, #f2f2f2, #dbdbdb, #ada996);
-}
-
-.night-mode {
-  background: linear-gradient(to left, #212831, #515e6e, #212831);
-}
-
-.dark-mode {
-  background: linear-gradient(to left, #000000, #2e2e2e, #000000);
-  color: #dadada;
+  filter: blur(0.3px);
 }
 
 .cards {
@@ -160,7 +149,7 @@ li:hover {
 }
 
 .content {
-  max-height: 90px;
+  max-height: 94px;
   overflow-y: scroll;
 }
 

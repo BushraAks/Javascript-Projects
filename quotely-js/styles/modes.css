@@ -1,0 +1,24 @@
+.light-mode {
+  background: linear-gradient(to left, #ada996, #f2f2f2, #dbdbdb, #ada996);
+}
+
+.night-mode {
+  background: linear-gradient(to left, #212831, #515e6e, #212831);
+}
+
+.dark-mode {
+  background: linear-gradient(to left, #000000, #2e2e2e, #000000);
+  color: #dadada;
+}
+
+.mode-4 {
+  background: linear-gradient(to right, #4d3656, #9370a0, #4d3656);
+}
+
+.mode-5 {
+  background: linear-gradient(to right, #355c7d, #6c5b7b);
+}
+
+.mode-6 {
+  background: linear-gradient(to right, #3c3b3f, #6d6a5a, #3c3b3f);
+}
