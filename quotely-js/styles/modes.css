@@ -12,13 +12,13 @@
 }
 
 .mode-4 {
+  background: linear-gradient(to right, #3c3b3f, #6d6a5a, #3c3b3f);
+}
+
+.mode-6 {
   background: linear-gradient(to right, #536976, #bbd2c5, #536976);
 }
 
 .mode-5 {
   background: linear-gradient(to right, #94716b, #b79891, #94716b);
-}
-
-.mode-6 {
-  background: linear-gradient(to right, #3c3b3f, #6d6a5a, #3c3b3f);
 }
