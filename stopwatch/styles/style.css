@@ -1,0 +1,129 @@
+@import url("./reset.css");
+
+body {
+  font-family: monospace;
+  background-color: #f5f5f5;
+}
+.container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* toggle switch */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+#toggle-switch {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ddd;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+#toggle-switch:checked + .slider {
+  background-color: #000;
+}
+
+#toggle-switch:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+
+.slider:before {
+  border-radius: 50%;
+}
+
+/* end toggle switch */
+
+h1 {
+  font-size: 40px;
+}
+
+.timer-btn {
+  width: 90px;
+  height: 30px;
+  border: 3px solid;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.timer-btn-bg {
+  /* lighter color */
+  background-color: #666;
+}
+
+.start-btn-click {
+  /* the darker color */
+  background-color: #434a41;
+}
+
+.timer-btn:hover {
+  /* the darker color */
+  background-color: #434a41;
+}
+
+.time-display {
+  font-size: 75px;
+  color: #40c437;
+  /* color: #fc2947; red for urgency for later */
+}
+
+.mili-digit1 {
+  font-size: 30px;
+}
+
+.mili-digit2 {
+  font-size: 30px;
+}
+
+.time-container {
+  padding: 8px 60px 18px 60px;
+  width: fit-content;
+  text-align: center;
+  border: 3px solid;
+  border-radius: 25px;
+  background-color: #222;
+}
+
+/* current time */
+.cur-time {
+  font-size: 16px;
+  color: #6c6c6c;
+}
