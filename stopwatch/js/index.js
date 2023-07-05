@@ -39,7 +39,7 @@ swch.addEventListener('click', (event) => {
 
 // Start button click listener
 startBtn.addEventListener('click', () => {
-    addRemoveClass(startBtn, 'start-btn-click', 'timer-btn-bg');
+    addRemoveClass(startBtn, 'start-btn-clicked', 'timer-btn-bg');
     if(stoped) { 
         startBtn.innerText = 'Pause';
         stoped = false;
@@ -57,7 +57,7 @@ startBtn.addEventListener('click', () => {
 // reset button click listener
 resetBtn.addEventListener('click', () => {
     startBtn.innerText = 'Start';
-    addRemoveClass(startBtn, 'timer-btn-bg', 'start-btn-click');
+    addRemoveClass(startBtn, 'timer-btn-bg', 'start-btn-clicked');
 
     stoped = true;
     clearInterval(intervalID);
