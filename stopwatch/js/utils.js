@@ -15,7 +15,7 @@ export function addRemoveClass(elements, newClass, oldClass){
 
 
 export const setDarkMode = () => {
-    addRemoveClass([document.body, swch], 'dark-mode', 'light-mode');
+    addRemoveClass([swch, document.body], 'dark-mode', 'light-mode');
     addRemoveClass(timeContainer, 'time-container-dark', 'time-container-light');
 }
 

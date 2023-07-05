@@ -29,7 +29,7 @@ body {
   width: 60px;
   height: 34px;
   cursor: pointer;
-  background-color: #ddd;
+  /* background-color: #ddd; */
   transition: 0.4s;
   border-radius: 34px;
   box-shadow: inset 0px 5px 10px rgba(44, 44, 44, 0.4),

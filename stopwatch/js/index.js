@@ -24,13 +24,13 @@ let switchOff = true;
 
 swch.addEventListener('click', (event) => {
     if (switchOff){
-        slider.style.transform = 'translateX(26px)';
         switchOff = false;
+        slider.style.transform = 'translateX(26px)';
         setDarkMode();
     }
     else{
-        slider.style.transform = '';
         switchOff = true;
+        slider.style.transform = '';
         setLightMode();
     }
 })
