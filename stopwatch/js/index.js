@@ -1,26 +1,12 @@
-// helper function
-const addRemoveClass = (element, newClass, oldClass) => {
-    element.classList.add(newClass);
-    element.classList.remove(oldClass);
-}
-
-const toggleSwitch = document.querySelector('#toggle-switch');
-
-if (toggleSwitch.checked){
-    document.body.style.backgroundColor = '#111';
-    document.body.style.color = '#fff';
-}
+import { addRemoveClass, setDarkMode, setLightMode } from './utils.js';
 
 const timeDisplay = document.querySelector('.time-display'),
-    timeContainer = document.querySelector('time-container'),
     startBtn = document.querySelector('#start-button'),
-    resetBtn = document.querySelector('#reset-button'),
-    miliDigit1 = document.querySelector('.mili-digit1'), // span with second last digit of miliseconds
-    miliDigit2 = document.querySelector('.mili-digit2'); // span with last digit of miliseconds
+    resetBtn = document.querySelector('#reset-button');
 
+export const timeContainer = document.querySelector('.time-container');
 let startTime = 0;
 let elapsedTime = 0;
-let currTime = 0;
 let stoped = true;
 let intervalID;
 let hrs = 0;
@@ -28,6 +14,28 @@ let mins = 0;
 let secs = 0;
 let milisOne = 0;  
 let milisTwo = 0;
+
+// toggle switch
+
+export const swch = document.querySelector('.switch');
+export const slider = document.querySelector('.slider');
+
+let switchOff = true;
+
+swch.addEventListener('click', (event) => {
+    if (switchOff){
+        slider.style.transform = 'translateX(26px)';
+        switchOff = false;
+        setDarkMode();
+    }
+    else{
+        slider.style.transform = '';
+        switchOff = true;
+        setLightMode();
+    }
+})
+
+// end toggle switch
 
 // Start button click listener
 startBtn.addEventListener('click', () => {
@@ -55,7 +63,6 @@ resetBtn.addEventListener('click', () => {
     clearInterval(intervalID);
     startTime = 0;
     elapsedTime = 0;
-    currTime = 0;
     hrs = 0;
     mins = 0;
     secs = 0;
@@ -65,7 +72,7 @@ resetBtn.addEventListener('click', () => {
 
     timeDisplay.innerHTML = 
         `
-        00:00:00<span class="mili-digit1">0</span><span class="mili-digit2">0</span>                
+        00:00:00<span class="mili-digit1 mili-digit">0</span><span class="mili-digit2 mili-digit">0</span>                
         `;
     
 });
@@ -89,7 +96,7 @@ const updateTime = () => {
 
     timeDisplay.innerHTML = 
         `
-        ${addZero(hrs)}:${addZero(mins)}:${addZero(secs)}<span class="mili-digit1">${milisOne}</span><span class="mili-digit2">${milisTwo}</span>          
+        ${addZero(hrs)}:${addZero(mins)}:${addZero(secs)}<span class="mili-digit1 mili-digit">${milisOne}</span><span class="mili-digit2 mili-digit">${milisTwo}</span>          
         `;
 
 }
@@ -100,7 +107,7 @@ const curTime = document.querySelector('.cur-time');
 
 let now = new Date();
 let hour = now.getHours();
-const amOrPm = () => { return hour > 12? 'am' : 'pm'};
+const amOrPm = () => { return hour >= 12? 'pm' : 'am'};
 hour %= 12 ;
 let minute = now.getMinutes();
 let second = now.getSeconds();
@@ -110,6 +117,7 @@ setInterval(() => {
     let now = new Date();
     let hour = now.getHours();
     hour %= 12 ;
+    if(hour == 0) {hour = 12};
     let minute = now.getMinutes();
     let second = now.getSeconds(); 
     curTime.innerHTML = `Current time: ${hour}:${addZero(minute)}:${addZero(second)}${amOrPm()}`;

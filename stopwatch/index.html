@@ -12,13 +12,12 @@
 
         <h1>Stopwatch</h1>
         <!-- toggle switch -->
-        <label class="switch">
-            <input type="checkbox" id="toggle-switch">
+        <div class="switch">
             <span class="slider"></span>
-          </label>
-        <div class="time-container">
+        </div>
+        <div class="time-container time-container-light">
             <div class="time-display">
-                00:00:00<span class="mili-digit1">0</span><span class="mili-digit2">0</span>
+                00:00:00<span class="mili-digit1 mili-digit">0</span><span class="mili-digit2 mili-digit">0</span>
             </div>
             <button id="start-button" class="timer-btn timer-btn-bg">Start</button>
             <button id="reset-button" class="timer-btn timer-btn-bg">Reset</button>
@@ -27,6 +26,6 @@
 
     </div>
     
-    <script src="index.js"></script>
+    <script type="module" src="js/index.js"></script>
 </body>
 </html>

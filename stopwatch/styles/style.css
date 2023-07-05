@@ -14,36 +14,29 @@ body {
 }
 
 /* toggle switch */
-
-/* The switch - the box around the slider */
 .switch {
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
-}
-
-/* Hide default HTML checkbox */
-#toggle-switch {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-color: #ddd;
   transition: 0.4s;
   border-radius: 34px;
+  /*  neomorphism */
+  box-shadow: inset 0px 5px 10px rgba(44, 44, 44, 0.4),
+    inset 0px -5px 10px rgba(255, 255, 255, 0.4);
 }
 
-.slider:before {
+.switch-dark-mode {
+  background-color: #ddd;
+}
+
+.switch-light-mode {
+  background-color: #000;
+}
+
+.slider {
   position: absolute;
   content: "";
   height: 26px;
@@ -52,23 +45,19 @@ body {
   bottom: 4px;
   background-color: #fff;
   transition: 0.4s;
-}
-
-#toggle-switch:checked + .slider {
-  background-color: #000;
-}
-
-#toggle-switch:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-
-.slider:before {
   border-radius: 50%;
 }
-
 /* end toggle switch */
+
+.dark-mode {
+  background-color: #222;
+  color: #ddd;
+}
+
+.light-mode {
+  background-color: #f5f5f5;
+  color: #000;
+}
 
 h1 {
   font-size: 40px;
@@ -85,18 +74,15 @@ h1 {
 }
 
 .timer-btn-bg {
-  /* lighter color */
   background-color: #666;
 }
 
 .start-btn-click {
-  /* the darker color */
-  background-color: #434a41;
+  background-color: #31922a;
 }
 
 .timer-btn:hover {
-  /* the darker color */
-  background-color: #434a41;
+  background-color: #31922a;
 }
 
 .time-display {
@@ -105,11 +91,7 @@ h1 {
   /* color: #fc2947; red for urgency for later */
 }
 
-.mili-digit1 {
-  font-size: 30px;
-}
-
-.mili-digit2 {
+.mili-digit {
   font-size: 30px;
 }
 
@@ -119,10 +101,16 @@ h1 {
   text-align: center;
   border: 3px solid;
   border-radius: 25px;
+}
+
+.time-container-dark {
+  background-color: #ddd;
+}
+
+.time-container-light {
   background-color: #222;
 }
 
-/* current time */
 .cur-time {
   font-size: 16px;
   color: #6c6c6c;
