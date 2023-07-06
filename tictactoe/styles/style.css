@@ -51,7 +51,7 @@ h1 {
   grid-template-columns: auto auto auto;
   justify-content: center;
   align-content: center;
-  /* gap: 0.7px; */
+  gap: 0.66px;
 }
 
 .cell {
