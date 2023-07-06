@@ -41,7 +41,7 @@ function startGame() {
             }
 
             else if(checkDraw()){
-                winnerMsg.innerText = `it's a Draw!`;
+                winnerMsg.innerText = ` It's a Draw! `;
                 setTimeout(() => {winnerMsg.style.display = 'block';}, 200);
                 endGame();
             }
