@@ -26,8 +26,8 @@ resetBtn.addEventListener('click', resetGame);
 function startGame() {
     cells.forEach((cell, index) => {
         cell.addEventListener('click', () => {
-            if (currentPlayer == 'X'){cell.classList.add('green-color')}
-            else {cell.classList.add('blue-color')}
+            if (currentPlayer == 'X' && cell.innerText == ''){cell.classList.add('green-color')}
+            else if (cell.innerText == "") {cell.classList.add('blue-color')}
             drawCharacter(cell, index);
             statusTxt.innerText = `Player ${currentPlayer}'s Turn`;
 
@@ -41,7 +41,7 @@ function startGame() {
             }
 
             else if(checkDraw()){
-                winnerMsg.innerText = ` It's a Draw! `;
+                winnerMsg.innerText = ` It's a Draw!! `;
                 setTimeout(() => {winnerMsg.style.display = 'block';}, 200);
                 endGame();
             }
