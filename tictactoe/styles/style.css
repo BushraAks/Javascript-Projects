@@ -1,0 +1,104 @@
+@import "./reset.css";
+
+body {
+  min-height: 100vh;
+  font-family: cursive;
+  color: #000;
+  background: linear-gradient(
+    135deg,
+    #1f4037,
+    #99f2c8,
+    #4ca2cd,
+    #c6ffdd,
+    #bbd2c5,
+    #67b26f,
+    #4ca2cd,
+    #a6ffcb,
+    #bbd2c5,
+    #536976
+  );
+  background-size: 300% 300%;
+  animation: animate 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+#game-container {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  width: 480px;
+  height: 480px;
+  border: 1px solid #1f4037;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.cells-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-content: center;
+  gap: 0.7px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+  border-radius: 3px;
+  font-size: 60px;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.winner {
+  position: absolute;
+  font-size: 50px;
+  color: #4ca2cd;
+  top: 175px;
+  right: 66px;
+  text-shadow: 2px 2px 10px #fff;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  padding: 2px 20px;
+  display: none;
+}
+
+#reset-button {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 5px 40px;
+  width: min-content;
+}
+
+#reset-button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
