@@ -43,6 +43,7 @@ h1 {
   flex-direction: column;
   gap: 8px;
   align-items: center;
+  box-shadow: 2px 2px 5px #000;
 }
 
 .cells-container {
@@ -50,16 +51,25 @@ h1 {
   grid-template-columns: auto auto auto;
   justify-content: center;
   align-content: center;
-  gap: 0.7px;
+  /* gap: 0.7px; */
 }
 
 .cell {
   width: 100px;
   height: 100px;
-  border: 1px solid;
+  border: 1px solid #000;
   border-radius: 3px;
   font-size: 60px;
   cursor: pointer;
+  text-shadow: 1px 1px 5px #000;
+}
+
+.green-color {
+  color: #00b182;
+}
+
+.blue-color {
+  color: #00aaff;
 }
 
 .cell:hover {
@@ -69,7 +79,6 @@ h1 {
 .winner {
   position: absolute;
   font-size: 50px;
-  color: #4ca2cd;
   top: 175px;
   right: 66px;
   text-shadow: 2px 2px 10px #fff;

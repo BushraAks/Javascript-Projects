@@ -26,18 +26,23 @@ resetBtn.addEventListener('click', resetGame);
 function startGame() {
     cells.forEach((cell, index) => {
         cell.addEventListener('click', () => {
+            if (currentPlayer == 'X'){cell.classList.add('green-color')}
+            else {cell.classList.add('blue-color')}
             drawCharacter(cell, index);
             statusTxt.innerText = `Player ${currentPlayer}'s Turn`;
 
             if (checkWinner()) {
                 endGame();
+                if (winner == 'X') {winnerMsg.classList.add('green-color')}
+                else {winnerMsg.classList.add('blue-color')}
                 winnerMsg.innerText = `Player ${winner} wins!`;
-                winnerMsg.style.display = 'block';
+                setTimeout(() => {winnerMsg.style.display = 'block';}, 200);
+                
             }
 
             else if(checkDraw()){
                 winnerMsg.innerText = `it's a Draw!`;
-                winnerMsg.style.display = 'block';
+                setTimeout(() => {winnerMsg.style.display = 'block';}, 200);
                 endGame();
             }
         })
@@ -89,4 +94,10 @@ function resetGame() {
     winner = '';
     start = true;
     winnerMsg.style.display = 'none';
+    winnerMsg.classList.remove('green-color');
+    winnerMsg.classList.remove('blue-color');
+    cells.forEach((cell) => {
+        cell.classList.remove('green-color');
+        cell.classList.remove('blue-color');
+    })
 }
