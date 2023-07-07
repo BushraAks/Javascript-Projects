@@ -28,7 +28,7 @@ function startGame() {
         cell.addEventListener('click', () => {
             if (currentPlayer == 'X' && cell.innerText == ''){cell.classList.add('green-color')}
             else if (cell.innerText == "") {cell.classList.add('blue-color')}
-            drawCharacter(cell, index);
+            drawCharacter(cell);
             statusTxt.innerText = `Player ${currentPlayer}'s Turn`;
 
             if (checkWinner()) {
@@ -53,7 +53,7 @@ function endGame() {
     start = false;
 }
 
-function drawCharacter(cell, index) {
+function drawCharacter(cell) {
     if( cell.innerText == '' && start){
         cell.innerText = currentPlayer;
         currentPlayer = currentPlayer == 'X' ? 'O' : 'X';
