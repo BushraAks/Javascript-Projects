@@ -53,7 +53,7 @@ body {
   justify-content: center;
   transform-style: preserve-3d;
   cursor: pointer;
-  animation: rotateClockwise 10s infinite linear paused;
+  animation: rotateClockwise 10s infinite linear;
 }
 
 .rotate-y-one {
@@ -61,7 +61,7 @@ body {
 }
 
 .rotate-y-two {
-  animation: rotateYTwo 10s infinite linear;
+  animation: rotateAnticlockwise 10s infinite linear;
 }
 
 .side {
