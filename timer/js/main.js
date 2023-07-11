@@ -15,7 +15,7 @@ const nums = document.querySelectorAll('.num');
 
 
 function countDown(){
-    let dateTo = new Date('August 1, 2023 00:00:00').getTime();
+    let dateTo = new Date('December 30, 2023 00:00:00').getTime();
     let dateNow = new Date().getTime();
     let gap = dateTo - dateNow;
 
@@ -26,7 +26,7 @@ function countDown(){
 
     if (dayTxt == '0' && hourTxt == '0' && minTxt == '0' && secTxt <= 30) {
         nums.forEach((num) => {
-            num.style.color = 'red';
+            num.style.color = 'red'; //fc2947
         })
     }
     else {
