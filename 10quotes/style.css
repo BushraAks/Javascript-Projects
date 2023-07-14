@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 80px;
+  background-color: #c4c8d8;
+  color: #222;
+  font-family: "Heebo", sans-serif;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 270px;
+  height: 330px;
+  border-radius: 25px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* h2 or h1 in the card */
+.author {
+  font-size: 14px;
+  margin: 15px 0;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* p inside the card */
+.quote {
+  max-height: 94px;
+  overflow-y: scroll;
+}

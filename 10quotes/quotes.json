@@ -1,0 +1,66 @@
+{
+    "quotes": [
+      {
+        "id": 1,
+        "author": "Albert Einstein",
+        "quote": "Imagination is more important than knowledge.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Albert_Einstein_Head.jpg"
+      },
+      {
+        "id": 2,
+        "author": "Mahatma Gandhi",
+        "quote": "Be the change that you wish to see in the world.",
+        "image": "https://wallpaperaccess.com/full/1392718.jpg"
+      },
+      {
+        "id": 3,
+        "author": "Maya Angelou",
+        "quote": "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
+        "image": "https://hips.hearstapps.com/hmg-prod/images/maya_angelou_photo_by_deborah_feingold_corbis_entertainment_getty_533084708.jpg"
+      },
+      {
+        "id": 4,
+        "author": "Steve Jobs",
+        "quote": "Stay hungry, stay foolish.",
+        "image": "https://cdn.vox-cdn.com/thumbor/yIoKynT0Jl-zE7yWwzmW2fy04xc=/0x0:706x644/1400x1400/filters:focal(353x322:354x323)/cdn.vox-cdn.com/uploads/chorus_asset/file/13874040/stevejobs.1419962539.png"
+      },
+      {
+        "id": 5,
+        "author": "Nelson Mandela",
+        "quote": "Education is the most powerful weapon which you can use to change the world.",
+        "image": "https://i.natgeofe.com/n/714a154d-2b89-4606-8d78-10cad2aa1c62/nelson-mandela-09060209807_3x2.jpg"
+      },
+      {
+        "id": 6,
+        "author": "Oprah Winfrey",
+        "quote": "The biggest adventure you can take is to live the life of your dreams.",
+        "image": "https://variety.com/wp-content/uploads/2015/12/oprah-variety-power-of-women-charity.jpg"
+      },
+      {
+        "id": 7,
+        "author": "Walt Disney",
+        "quote": "All our dreams can come true if we have the courage to pursue them.",
+        "image": "https://d.newsweek.com/en/full/1555427/walt-disney.jpg?w=1600&h=900&q=88&f=83a8c310d5e5ac64947061669d8b7783"
+      },
+      {
+        "id": 8,
+        "author": "Abraham Lincoln",
+        "quote": "In the end, it's not the years in your life that count. It's the life in your years.",
+        "image": "https://www.whitehouse.gov/wp-content/uploads/2021/01/16_abraham_lincoln.jpg"
+      },
+      {
+        "id": 9,
+        "author": "Ralph Waldo Emerson",
+        "quote": "Do not go where the path may lead, go instead where there is no path and leave a trail.",
+        "image": "https://cdn.britannica.com/56/65056-050-9E0FABF2/Ralph-Waldo-Emerson-1860.jpg?w=400&h=300&c=crop"
+      },
+      {
+        "id": 10,
+        "author": "J.K. Rowling",
+        "quote": "It does not do to dwell on dreams and forget to live.",
+        "image": "https://c.ndtvimg.com/2020-05/ngh0qgoo_jk-rowling_625x300_27_May_20.jpg?im=Resize=(1230,900)"
+
+      }
+    ]
+  }
+  
