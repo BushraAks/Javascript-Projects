@@ -25,7 +25,7 @@ for (let i = 0; i <= 42; i++) {
                 card.classList.add('card');
                 card.innerHTML = 
                 `
-                    <img src="${character.image}">
+                    <img src="${character.image}" alt="${character.name}">
                     <ul>
                         <li>${character.name}</li>
                         <li>${character.gender}</li>
