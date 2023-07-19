@@ -2,15 +2,9 @@ const cards = document.querySelector('.cards');
 
 for (let i = 0; i <= 42; i++) {
     const url = `https://rickandmortyapi.com/api/character/?page=${i}`;
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '3bd7554df9msh886f5c34be68a17p1c559djsnb06f8227656d',
-            'X-RapidAPI-Host': 'brianiswu-cat-facts-v1.p.rapidapi.com'
-        }
-    };
 
-    fetch(url, options)
+
+    fetch(url)
     .then(response => response.json())
     .then(response => {
         const results = response.results;
