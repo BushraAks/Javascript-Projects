@@ -32,8 +32,8 @@ h1 {
 }
 
 .card {
-  width: 200px;
-  height: 250px;
+  width: 190px;
+  height: 220px;
   padding: 20px 20px;
   display: flex;
   flex-direction: column;

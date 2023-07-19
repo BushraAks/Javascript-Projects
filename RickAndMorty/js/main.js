@@ -26,12 +26,7 @@ for (let i = 0; i <= 42; i++) {
                 card.innerHTML = 
                 `
                     <img src="${character.image}" alt="${character.name}">
-                    <ul>
-                        <li>${character.name}</li>
-                        <li>${character.gender}</li>
-                        <li>${character.species}</li>
-                    </ul>
-    
+                    <div>${character.name}</div>
                 `
                 cards.appendChild(card);
             }
