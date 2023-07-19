@@ -11,9 +11,7 @@ const options = {
 fetch(url, options)
 .then(response => response.json())
 .then(response => {
-    console.log(response);
     response.forEach((character) => {
-        console.log(`character: ${character}`)
         if (character.image){
             let card = document.createElement('div');
             card.classList.add('card');
@@ -40,7 +38,6 @@ cardsContainer.addEventListener('click', (event) => {
     fetch(url, options)
     .then(response => response.json())
     .then(response => {
-        console.log(response);
         const index = response.findIndex(obj => obj.id === charId);
         const character = response[index];
 
