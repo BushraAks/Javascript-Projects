@@ -3,22 +3,29 @@
 Here are some of my projects made using HTML, CSS and Javascript
 
 <a href="https://bushraaksoy.github.io/Javascript-Projects/quotely-js/">Quotely<a/>
+
 ![Quotely](images/quotely-ss.png "quotely")
 
 <a href="https://bushraaksoy.github.io/Javascript-Projects/harry-potter/">Harry Potter<a/>
-<img href="https://raw.githubusercontent.com/bushraaksoy/Javascript-Projects/main/images/harry-potter-ss.png" />
+
+![Harry Potter](images/harry-potter-ss.png "harry-potter")
 
 <a href="https://bushraaksoy.github.io/Javascript-Projects/stopwatch/">Stopwatch<a/>
-<img href="https://raw.githubusercontent.com/bushraaksoy/Javascript-Projects/main/images/stopwatch-ss.png" />
+
+![Stopwatch](images/stopwatch-ss.png "stopwatch")
 
 <a href="https://bushraaksoy.github.io/Javascript-Projects/RickAndMorty/">Rick and Morty<a/>
-<img href="https://raw.githubusercontent.com/bushraaksoy/Javascript-Projects/main/images/rick-and-morty-ss.png" />
+
+![Rich and Morty](images/rick-and-morty-ss.png "rick-and-morty")
 
 <a href="https://bushraaksoy.github.io/Javascript-Projects/Todo/">To-Do<a/>
-<img href="https://raw.githubusercontent.com/bushraaksoy/Javascript-Projects/main/images/to-do-ss.png" />
+
+![To-Do](images/to-do-ss.png "to-do")
 
 <a href="https://bushraaksoy.github.io/Javascript-Projects/tictactoe/">Tic-Tac-Toe<a/>
-<img href="https://raw.githubusercontent.com/bushraaksoy/Javascript-Projects/main/images/tic-tac-toe-ss.png" />
+
+![Tic-Tac-Toe](images/tic-tac-toe-ss.png "tic-tac-toe")
 
 <a href="https://bushraaksoy.github.io/Javascript-Projects/snake-game/">Snake Game<a/>
-<img href="https://raw.githubusercontent.com/bushraaksoy/Javascript-Projects/main/images/snake-game-ss.png" />
+
+![Snake Game](images/snake-game-ss.png "snake-game")
