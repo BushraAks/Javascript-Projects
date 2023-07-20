@@ -3,7 +3,7 @@
 Here are some of my projects made using HTML, CSS and Javascript
 
 <a href="https://bushraaksoy.github.io/Javascript-Projects/quotely-js/">Quotely<a/>
-<img href="./images/quotely-ss.png"/>
+![Quotely](images/quotely-ss.png "quotely")
 
 <a href="https://bushraaksoy.github.io/Javascript-Projects/harry-potter/">Harry Potter<a/>
 <img href="https://raw.githubusercontent.com/bushraaksoy/Javascript-Projects/main/images/harry-potter-ss.png" />
